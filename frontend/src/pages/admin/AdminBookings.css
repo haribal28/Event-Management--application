@@ -1,0 +1,232 @@
+/* Admin Bookings Page Styles */
+
+/* Stats Row */
+.bookings-stats {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.mini-stat {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem 1.5rem;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: 0.75rem;
+    min-width: 120px;
+}
+
+.mini-stat-value {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #f1f5f9;
+}
+
+.mini-stat-label {
+    font-size: 0.75rem;
+    color: #64748b;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-top: 0.25rem;
+}
+
+.mini-stat.confirmed .mini-stat-value {
+    color: #22c55e;
+}
+
+.mini-stat.pending .mini-stat-value {
+    color: #f59e0b;
+}
+
+.mini-stat.cancelled .mini-stat-value {
+    color: #ef4444;
+}
+
+.mini-stat.revenue .mini-stat-value {
+    color: #06b6d4;
+}
+
+/* Toolbar */
+.bookings-toolbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.filter-group {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1rem;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 0.625rem;
+}
+
+.filter-group svg {
+    color: #64748b;
+}
+
+.filter-group select {
+    background: transparent;
+    border: none;
+    color: #f1f5f9;
+    font-size: 0.9375rem;
+    font-family: inherit;
+    outline: none;
+    cursor: pointer;
+}
+
+.filter-group select option {
+    background: #1e293b;
+    color: #f1f5f9;
+}
+
+/* Bookings Table */
+.bookings-table-wrapper {
+    background: linear-gradient(145deg,
+            rgba(30, 41, 59, 0.6) 0%,
+            rgba(15, 23, 42, 0.8) 100%);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 1rem;
+    overflow: hidden;
+}
+
+.bookings-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.bookings-table th,
+.bookings-table td {
+    padding: 1rem 1.25rem;
+    text-align: left;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.bookings-table th {
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: #64748b;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    background: rgba(0, 0, 0, 0.2);
+}
+
+.bookings-table td {
+    font-size: 0.875rem;
+    color: #94a3b8;
+}
+
+.bookings-table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+/* Booking ID */
+.booking-id {
+    font-family: monospace;
+    font-size: 0.8125rem;
+    color: #8b5cf6;
+    font-weight: 600;
+}
+
+/* User Cell */
+.user-cell {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.user-avatar-small {
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #8b5cf6, #06b6d4);
+    color: white;
+    font-weight: 600;
+    font-size: 0.75rem;
+    border-radius: 50%;
+}
+
+.user-name {
+    display: block;
+    font-weight: 500;
+    color: #f1f5f9;
+    font-size: 0.875rem;
+}
+
+.user-email {
+    display: block;
+    font-size: 0.75rem;
+    color: #64748b;
+}
+
+/* Event Name */
+.event-name {
+    color: #f1f5f9;
+    font-weight: 500;
+    max-width: 180px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    display: block;
+}
+
+/* Amount */
+.amount-cell {
+    font-weight: 600;
+    color: #06b6d4;
+}
+
+/* Action Buttons */
+.action-btn.confirm:hover {
+    color: #22c55e;
+    border-color: rgba(34, 197, 94, 0.3);
+}
+
+.action-btn.cancel:hover {
+    color: #ef4444;
+    border-color: rgba(239, 68, 68, 0.3);
+}
+
+.action-btn.restore:hover {
+    color: #f59e0b;
+    border-color: rgba(245, 158, 11, 0.3);
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+    .bookings-table-wrapper {
+        overflow-x: auto;
+    }
+
+    .bookings-table {
+        min-width: 900px;
+    }
+
+    .bookings-stats {
+        overflow-x: auto;
+        flex-wrap: nowrap;
+        padding-bottom: 0.5rem;
+    }
+}
+
+@media (max-width: 640px) {
+    .bookings-toolbar {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .search-box,
+    .filter-group {
+        width: 100%;
+    }
+}

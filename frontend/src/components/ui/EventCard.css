@@ -1,0 +1,237 @@
+/* EventCard Styles - Premium Design */
+
+.event-card {
+    position: relative;
+    background: linear-gradient(145deg,
+            rgba(255, 255, 255, 0.06) 0%,
+            rgba(255, 255, 255, 0.02) 100%);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 1.25rem;
+    overflow: hidden;
+    cursor: pointer;
+    transition: border-color 0.3s ease;
+}
+
+.event-card:hover {
+    border-color: rgba(139, 92, 246, 0.3);
+}
+
+/* Glow border effect */
+.event-card__glow {
+    position: absolute;
+    inset: -1px;
+    border-radius: inherit;
+    background: linear-gradient(135deg,
+            rgba(139, 92, 246, 0.4) 0%,
+            rgba(6, 182, 212, 0.4) 50%,
+            rgba(139, 92, 246, 0.4) 100%);
+    opacity: 0;
+    z-index: -1;
+    transition: opacity 0.3s ease;
+}
+
+.event-card:hover .event-card__glow {
+    opacity: 0.6;
+}
+
+/* Image section */
+.event-card__image-container {
+    position: relative;
+    overflow: hidden;
+    aspect-ratio: 16 / 10;
+}
+
+.event-card__image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+}
+
+.event-card__image-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom,
+            transparent 0%,
+            rgba(2, 6, 23, 0.5) 70%,
+            rgba(2, 6, 23, 0.9) 100%);
+    pointer-events: none;
+}
+
+/* Category badge */
+.event-card__category {
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    padding: 0.375rem 0.875rem;
+    background: rgba(139, 92, 246, 0.9);
+    color: white;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    border-radius: 9999px;
+    backdrop-filter: blur(10px);
+}
+
+/* Price badge */
+.event-card__price {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    padding: 0.375rem 0.875rem;
+    background: rgba(6, 182, 212, 0.9);
+    color: white;
+    font-size: 0.875rem;
+    font-weight: 700;
+    border-radius: 9999px;
+    backdrop-filter: blur(10px);
+}
+
+/* Content section */
+.event-card__content {
+    padding: 1.5rem;
+}
+
+.event-card__title {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #f1f5f9;
+    margin-bottom: 0.5rem;
+    line-height: 1.3;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.event-card__description {
+    font-size: 0.875rem;
+    color: #94a3b8;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+/* Meta information */
+.event-card__meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-bottom: 1.25rem;
+}
+
+.event-card__meta-item {
+    display: flex;
+    align-items: center;
+    gap: 0.375rem;
+    font-size: 0.8125rem;
+    color: #64748b;
+}
+
+.event-card__meta-icon {
+    width: 14px;
+    height: 14px;
+    color: #8b5cf6;
+}
+
+/* Action row */
+.event-card__action {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding-top: 1rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.event-card__action-text {
+    font-size: 0.875rem;
+    font-weight: 600;
+    background: linear-gradient(135deg, #8b5cf6 0%, #06b6d4 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.event-card__action-arrow {
+    display: flex;
+    align-items: center;
+    color: #8b5cf6;
+}
+
+/* Floating particles */
+.event-card__particles {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    overflow: hidden;
+}
+
+.particle {
+    position: absolute;
+    width: 4px;
+    height: 4px;
+    background: rgba(139, 92, 246, 0.5);
+    border-radius: 50%;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.event-card:hover .particle {
+    opacity: 1;
+}
+
+.particle-1 {
+    top: 20%;
+    right: 15%;
+    animation: particleFloat 3s ease-in-out infinite;
+}
+
+.particle-2 {
+    top: 60%;
+    right: 25%;
+    animation: particleFloat 4s ease-in-out infinite 0.5s;
+}
+
+.particle-3 {
+    top: 40%;
+    right: 10%;
+    animation: particleFloat 3.5s ease-in-out infinite 1s;
+}
+
+@keyframes particleFloat {
+
+    0%,
+    100% {
+        transform: translateY(0) scale(1);
+    }
+
+    50% {
+        transform: translateY(-15px) scale(1.2);
+    }
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+
+    .event-card,
+    .event-card__image,
+    .event-card__glow,
+    .particle {
+        transition: none;
+        animation: none;
+    }
+
+    .event-card:hover {
+        transform: none;
+    }
+
+    .event-card:hover .event-card__image {
+        transform: none;
+    }
+}
